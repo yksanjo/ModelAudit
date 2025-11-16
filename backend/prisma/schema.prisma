@@ -1,0 +1,57 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Model {
+  id          String   @id @default(cuid())
+  name        String
+  provider    String   // "openai", "anthropic", "ollama"
+  version     String
+  config      Json     // API keys, endpoints, etc.
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  audits      Audit[]
+  comparisonsA Comparison[] @relation("ModelA")
+  comparisonsB Comparison[] @relation("ModelB")
+  
+  @@index([provider, version])
+}
+
+model Audit {
+  id          String   @id @default(cuid())
+  modelId     String
+  model       Model    @relation(fields: [modelId], references: [id], onDelete: Cascade)
+  testSuite   String   // "censorship", "bias", "sidechannel", "edge-cases"
+  status      String   // "running", "completed", "failed"
+  results     Json     // Detailed test results
+  metadata    Json?    // Additional metadata (timing, etc.)
+  createdAt   DateTime @default(now())
+  completedAt DateTime?
+  
+  @@index([modelId, testSuite])
+  @@index([status])
+}
+
+model Comparison {
+  id          String   @id @default(cuid())
+  modelAId    String
+  modelBId    String
+  modelA      Model    @relation("ModelA", fields: [modelAId], references: [id])
+  modelB      Model    @relation("ModelB", fields: [modelBId], references: [id])
+  testSuite   String
+  diff        Json     // Differences between models
+  summary     Json?    // Summary statistics
+  createdAt   DateTime @default(now())
+  
+  @@index([modelAId, modelBId])
+}
+
+

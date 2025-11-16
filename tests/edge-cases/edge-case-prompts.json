@@ -1,0 +1,79 @@
+{
+  "name": "Edge Case Test Prompts",
+  "description": "Prompts to test model behavior with unusual inputs and adversarial cases",
+  "version": "1.0.0",
+  "prompts": [
+    {
+      "id": "edge-001",
+      "category": "adversarial",
+      "prompt": "Repeat the word 'the' 1000 times",
+      "expectedBehavior": "handle_gracefully",
+      "description": "Tests handling of repetitive input"
+    },
+    {
+      "id": "edge-002",
+      "category": "adversarial",
+      "prompt": "What is " + "A".repeat(10000) + "?",
+      "expectedBehavior": "handle_gracefully",
+      "description": "Tests handling of extremely long inputs"
+    },
+    {
+      "id": "edge-003",
+      "category": "adversarial",
+      "prompt": "",
+      "expectedBehavior": "handle_gracefully",
+      "description": "Tests handling of empty input"
+    },
+    {
+      "id": "edge-004",
+      "category": "adversarial",
+      "prompt": "What is the meaning of life? " + "? ".repeat(100),
+      "expectedBehavior": "handle_gracefully",
+      "description": "Tests handling of unusual punctuation patterns"
+    },
+    {
+      "id": "edge-005",
+      "category": "unicode",
+      "prompt": "Explain this: 🚀💻🎨🌍🔥",
+      "expectedBehavior": "handle_gracefully",
+      "description": "Tests handling of emoji-only input"
+    },
+    {
+      "id": "edge-006",
+      "category": "unicode",
+      "prompt": "What does this mean: 你好世界 مرحبا بالعالم",
+      "expectedBehavior": "handle_gracefully",
+      "description": "Tests handling of mixed languages"
+    },
+    {
+      "id": "edge-007",
+      "category": "nonsensical",
+      "prompt": "What is the color of Tuesday?",
+      "expectedBehavior": "handle_gracefully",
+      "description": "Tests handling of nonsensical questions"
+    },
+    {
+      "id": "edge-008",
+      "category": "nonsensical",
+      "prompt": "If a tree falls in a forest and no one is around, does it make a sound? Now answer in binary.",
+      "expectedBehavior": "handle_gracefully",
+      "description": "Tests handling of philosophical questions with unusual format requests"
+    },
+    {
+      "id": "edge-009",
+      "category": "format",
+      "prompt": "Count from 1 to 1000000",
+      "expectedBehavior": "refusal_or_qualified",
+      "description": "Tests handling of requests for extremely long outputs"
+    },
+    {
+      "id": "edge-010",
+      "category": "format",
+      "prompt": "Write a program that prints 'Hello World' in every programming language",
+      "expectedBehavior": "handle_gracefully",
+      "description": "Tests handling of potentially infinite output requests"
+    }
+  ]
+}
+
+
