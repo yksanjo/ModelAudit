@@ -1,5 +1,9 @@
 # ModelAudit - LLM Behavior Transparency Toolkit
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-yellow.svg)](https://www.javascript.com/) [![TypeScript](https://img.shields.io/badge/TypeScript-5.0+-blue.svg)](https://www.typescriptlang.org/) [![GitHub stars](https://img.shields.io/github/stars/yksanjo/ModelAudit?style=social)](https://github.com/yksanjo/ModelAudit/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/yksanjo/ModelAudit.svg)](https://github.com/yksanjo/ModelAudit/network/members) [![GitHub issues](https://img.shields.io/github/issues/yksanjo/ModelAudit.svg)](https://github.com/yksanjo/ModelAudit/issues) [![Last commit](https://img.shields.io/github/last-commit/yksanjo/ModelAudit.svg)](https://github.com/yksanjo/ModelAudit/commits/main)
+
+
 A comprehensive toolkit and dashboard for auditing language model behavior, detecting censorship patterns, bias, side-channel leaks, and maintaining versioned model baselines.
 
 ## Features
