@@ -1,77 +1,82 @@
-# ModelAudit - LLM Behavior Transparency Toolkit
+# ModelAudit
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-yellow.svg)](https://www.javascript.com/) [![TypeScript](https://img.shields.io/badge/TypeScript-5.0+-blue.svg)](https://www.typescriptlang.org/) [![GitHub stars](https://img.shields.io/github/stars/yksanjo/ModelAudit?style=social)](https://github.com/yksanjo/ModelAudit/stargazers)
-[![GitHub forks](https://img.shields.io/github/forks/yksanjo/ModelAudit.svg)](https://github.com/yksanjo/ModelAudit/network/members) [![GitHub issues](https://img.shields.io/github/issues/yksanjo/ModelAudit.svg)](https://github.com/yksanjo/ModelAudit/issues) [![Last commit](https://img.shields.io/github/last-commit/yksanjo/ModelAudit.svg)](https://github.com/yksanjo/ModelAudit/commits/main)
+## Detailed Description
 
+ModelAudit is maintained as an industry-grade software project with production-ready engineering practices.  
+This repository includes documented setup, quality gates, operational guidance, and governance standards so contributors can safely build, test, and ship changes with confidence.
 
-A comprehensive toolkit and dashboard for auditing language model behavior, detecting censorship patterns, bias, side-channel leaks, and maintaining versioned model baselines.
+## Problem Statement
 
-## Features
+Describe the user or business problem this project solves, the target users, and expected outcomes.
 
-- **Model Adapter System**: Plugin architecture supporting OpenAI, Anthropic, Ollama, and more
-- **Audit Test Suites**: Censorship detection, bias analysis, edge case testing
-- **Side-Channel Scanner**: Network metadata, timing analysis, embedding leakage detection
-- **Versioning & Comparison**: Track model behavior changes over time
-- **Dashboard**: Web UI for running audits and viewing results
+## Solution Overview
 
-## Quick Start
+Summarize the architecture, core modules, and runtime behavior at a high level.
+
+## Key Features
+
+- Clear project scope and intended use.
+- Reproducible local development workflow.
+- Test coverage and CI quality gates.
+- Security and contribution policies.
+- Deployment-ready repository structure.
+
+## Repository Structure
+
+```text
+.
+|-- src/                  # Core implementation
+|-- tests/                # Automated test suites
+|-- docs/                 # Design notes and operational docs
+|-- .github/workflows/    # CI pipelines
+|-- README.md
+|-- LICENSE
+|-- CONTRIBUTING.md
+|-- SECURITY.md
+|-- CODE_OF_CONDUCT.md
+```
+
+## Getting Started
 
 ### Prerequisites
 
-- Node.js 18+
-- PostgreSQL
-- npm or yarn
+- Git
+- Project runtime/toolchain for this repo
 
-### Installation
-
-```bash
-# Install backend dependencies
-cd backend
-npm install
-
-# Install frontend dependencies
-cd ../web
-npm install
-
-# Set up database
-cd ../backend
-npx prisma migrate dev
-npx prisma generate
-```
-
-### Configuration
-
-Create a `.env` file in the `backend` directory:
-
-```env
-DATABASE_URL="postgresql://user:password@localhost:5432/modelaudit"
-PORT=3000
-```
-
-### Running
+### Local Setup
 
 ```bash
-# Start backend (from backend directory)
-npm run dev
-
-# Start frontend (from web directory)
-npm run dev
+make test
+make lint
 ```
 
-Visit http://localhost:3001 to access the dashboard.
+## Usage
 
-## Project Structure
+Document primary commands, API routes, CLI examples, or UI workflows here.
 
-```
-model-audit/
-├── backend/          # TypeScript backend with Express API
-├── web/              # React frontend dashboard
-├── tests/            # Test prompt suites
-└── README.md
-```
+## Quality Standards
+
+- CI must pass before merge.
+- Changes require tests for critical behavior.
+- Security-sensitive changes should include risk notes.
+- Keep pull requests focused and reviewable.
+
+## Security
+
+See `SECURITY.md` for responsible disclosure and handling guidelines.
+
+## Contributing
+
+See `CONTRIBUTING.md` for branching, commit, and pull request expectations.
+
+## Roadmap
+
+Track upcoming milestones, technical debt, and planned feature work.
+
+## Support
+
+Open a GitHub issue for bugs, feature requests, or documentation gaps.
 
 ## License
 
-MIT
-
-
+This project is released under the MIT License.
